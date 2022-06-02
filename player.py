@@ -1,4 +1,4 @@
-from board import board
+from board import board, printBoard
 
 def checkIfValid(board, boat_size, x, y, pos):
     if pos == "right":
@@ -65,7 +65,8 @@ def place_boats(board, number_boats):
             else:
                 print("invalid input :( \n")
         print("Current state of the player's board: ")
-        print(board, "\n")
+        print(printBoard(board), "\n")
+        #print(board, "\n")
     return(board)
 
 def player(num, boat_num):
@@ -73,5 +74,6 @@ def player(num, boat_num):
     print("\nPlayer",num,"'s turn to place their boats:")
     P1_board = place_boats(game_board, boat_num)
     print("Final board state of Player",num,": ")
-    print(P1_board)
+    print(printBoard(P1_board), "\n")
+    #print(P1_board)
     return(P1_board)
